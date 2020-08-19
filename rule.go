@@ -244,6 +244,10 @@ func exprsFromMsg(b []byte) ([]expr.Any, error) {
 						e = &expr.Limit{}
 					case "dynset":
 						e = &expr.Dynset{}
+					case "match":
+						e = &expr.Match{}
+					case "target":
+						e = &expr.Target{}
 					}
 					if e == nil {
 						// TODO: introduce an opaque expression type so that users know
